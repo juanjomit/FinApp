@@ -1,0 +1,50 @@
+# Build artifacts
+**/bin/
+**/obj/
+**/Release/
+**/Debug/
+
+# IDE and OS specific files
+.idea/
+*.sln
+*.suo
+*.user
+*.vbproj
+*.csproj
+*.vcxproj
+*.pch
+*.userprefs
+*.tmproj
+*.log
+
+# Testing frameworks and coverage
+**/TestResults/
+coverage/
+**/.coverage*
+
+# NuGet packages (avoid version control)
+**/packages/
+
+# Temporary files
+**/tmp/
+**/logs/
+
+# Environment specific configurations
+.env
+appsettings.Development.json
+appsettings.Production.json  # Add other environment-specific files as needed
+
+# Secret files (should be managed separately)
+secrets.json
+
+# Editor config and linters
+.editorconfig
+**/.eslintcache
+
+# Specific file or directory to exclude
+excluded-file.txt
+excluded-directory/
+
+# Ignore glob patterns (use with caution)
+**/node_modules/*  # For frontend integration (if applicable)
+!**/node_modules/my-important-library/*
