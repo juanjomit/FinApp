@@ -3,6 +3,7 @@
 **/obj/
 **/Release/
 **/Debug/
+**/.vs/
 
 # IDE and OS specific files
 .idea/
@@ -48,4 +49,3 @@ excluded-directory/
 # Ignore glob patterns (use with caution)
 **/node_modules/*  # For frontend integration (if applicable)
 !**/node_modules/my-important-library/*
-/.vs
