@@ -48,3 +48,4 @@ excluded-directory/
 # Ignore glob patterns (use with caution)
 **/node_modules/*  # For frontend integration (if applicable)
 !**/node_modules/my-important-library/*
+/.vs

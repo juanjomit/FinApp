@@ -33,8 +33,7 @@
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\3bea1ee1-38ce-4aa0-bd98-53dbeeb0ba01\\secrets.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T20:29:03.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-23T20:29:03.656Z"
             },
             {
               "$type": "Document",
@@ -44,7 +43,7 @@
               "RelativeDocumentMoniker": "FinApp\\Program.cs",
               "ToolTip": "C:\\Users\\juanj\\source\\repos\\FinApp\\FinApp\\Program.cs",
               "RelativeToolTip": "FinApp\\Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAxwBoAAAAcAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABQAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T18:12:12.364Z",
               "EditorCaption": ""
@@ -59,8 +58,7 @@
               "RelativeToolTip": "FinApp\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-22T01:48:38.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T01:48:38.442Z"
             }
           ]
         }
