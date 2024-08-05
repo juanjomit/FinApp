@@ -10,6 +10,7 @@ namespace FinApp.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [RequireHttps]
     public class UsersController : BaseController<User, int>
     {
 

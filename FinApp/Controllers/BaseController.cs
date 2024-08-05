@@ -1,5 +1,6 @@
 ﻿using Business.Interfaces; 
-using Infraestructure.Model; 
+using Infraestructure.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 
 namespace FinApp.Controllers
@@ -34,7 +35,7 @@ namespace FinApp.Controllers
         /// Retrieves all entities of the specified type asynchronously.
         /// </summary>
         /// <returns>An asynchronous task returning a collection of entities.</returns>
-        [HttpGet]
+        [HttpGet, Authorize]
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _service.GetAllAsync();
@@ -45,7 +46,7 @@ namespace FinApp.Controllers
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>An asynchronous task returning an IActionResult based on the retrieved entity.</returns>
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public virtual async Task<IActionResult> GetByIdAsync(TKey id)
         {
             var entity = await _service.GetByIdAsync(id);
@@ -63,7 +64,7 @@ namespace FinApp.Controllers
         /// </summary>
         /// <param name="entity">The entity object to be created.</param>
         /// <returns>An asynchronous task returning an IActionResult based on the creation operation.</returns>
-        [HttpPost]
+        [HttpPost, Authorize]
         public virtual async Task<IActionResult> CreateAsync([FromBody] TEntity entity)
         {
             if (!ModelState.IsValid)
@@ -82,7 +83,7 @@ namespace FinApp.Controllers
         /// <param name="id">The ID of the entity to update.</param>
         /// <param name="entity">The updated entity object.</param>
         /// <returns>An asynchronous task returning an IActionResult based on the update operation.</returns>
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize]
         public virtual async Task<IActionResult> UpdateAsync(TKey id, [FromBody] TEntity entity)
         {
             if (!ModelState.IsValid)
@@ -100,7 +101,7 @@ namespace FinApp.Controllers
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>An asynchronous task returning an IActionResult based on the deletion operation.</returns>
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize]
         public virtual async Task<IActionResult> DeleteAsync(TKey id)
         {
             await _service.DeleteAsync(id);

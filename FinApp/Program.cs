@@ -5,9 +5,9 @@ using Infraestructure.Contexts;
 using Infraestructure.Interfaces;
 using Infraestructure.Model;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.Reflection;
+using Microsoft.OpenApi.Models;
 
 namespace FinApp
 {
@@ -20,9 +20,21 @@ namespace FinApp
             // Add services to the container.
             builder.Services.AddControllers();
 
+            // Add authorization and authentication
+            builder.Services.AddAuthorization();
+            builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<FinAppContext>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+            });        
 
             // Add DBContext
             IConfiguration config = new ConfigurationBuilder()
@@ -60,6 +72,8 @@ namespace FinApp
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.MapIdentityApi<IdentityUser>();
 
             app.UseHttpsRedirection();
 

@@ -1,4 +1,6 @@
 ﻿using Infraestructure.Model;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.Contexts
@@ -7,7 +9,7 @@ namespace Infraestructure.Contexts
     /// DbContext class representing the FinApp database context.
     /// This class defines the connection to the database and provides access to its entities as DbSets.
     /// </summary>
-    public class FinAppContext : DbContext
+    public class FinAppContext : IdentityDbContext<IdentityUser>
     {
         /// <summary>
         /// Constructor for the FinAppContext class, injecting the DbContextOptions.
